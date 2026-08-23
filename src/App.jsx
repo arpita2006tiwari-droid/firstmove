@@ -459,6 +459,46 @@ const Coaching = () => {
   );
 };
 
+const PrivateCoaching = () => {
+  return (
+    <section className="reveal" style={{ padding: '120px 0', backgroundColor: 'var(--ink)', borderTop: '1px solid var(--panel-2)' }}>
+      <div className="container" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '64px', alignItems: 'center' }}>
+        <div style={{ position: 'relative', borderRadius: '16px', overflow: 'hidden', height: '600px' }}>
+          <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?q=80&w=2938&auto=format&fit=crop" alt="Private Coaching" style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'grayscale(100%) sepia(20%)' }} />
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, var(--ink) 0%, transparent 50%)' }} />
+        </div>
+        <div>
+          <div className="eyebrow" style={{ color: 'var(--gold)', marginBottom: '16px' }}>1-on-1 Training</div>
+          <h2 className="font-display" style={{ fontSize: '64px', marginBottom: '24px' }}>Private Coaching Sessions</h2>
+          <p style={{ fontSize: '20px', color: 'var(--steel)', marginBottom: '40px', lineHeight: 1.6 }}>
+            Elevate your game with personalized, 1-on-1 sessions from our elite certified pros. Tailored drills, intensive feedback, and accelerated growth.
+          </p>
+          <ul style={{ listStyle: 'none', padding: 0, marginBottom: '48px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            {[
+              'Customized training plans',
+              'Video analysis & technique breakdown',
+              'Flexible scheduling',
+              'Progress tracking'
+            ].map((item, i) => (
+              <li key={i} style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '16px', color: 'var(--chalk)' }}>
+                <CheckCircle2 size={20} color="var(--gold)" />
+                {item}
+              </li>
+            ))}
+          </ul>
+          <button style={{
+            backgroundColor: 'var(--gold)', color: 'var(--ink)', padding: '16px 32px', border: 'none', cursor: 'pointer',
+            borderRadius: '4px', fontFamily: 'var(--font-mono)', fontSize: '14px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em',
+            transition: 'var(--transition-fast)'
+          }} onMouseOver={e => e.target.style.backgroundColor = '#f0c662'} onMouseOut={e => e.target.style.backgroundColor = 'var(--gold)'}>
+            Book a Session
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const Pricing = () => {
   const tiers = [
     { name: 'Silver', price: '₹4,999', accent: 'var(--silver)', accentDim: 'var(--silver-dim)', desc: 'Access to standard courts and basic tracking.' },
@@ -467,7 +507,7 @@ const Pricing = () => {
   ];
 
   return (
-    <section className="reveal" style={{ padding: '120px 0', backgroundColor: 'var(--ink)' }}>
+    <section className="reveal" style={{ padding: '120px 0', backgroundColor: 'var(--panel)' }}>
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '80px' }}>
           <div className="eyebrow" style={{ color: 'var(--gold)', marginBottom: '16px' }}>Membership</div>
@@ -477,7 +517,7 @@ const Pricing = () => {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '32px' }}>
           {tiers.map((tier, i) => (
             <div key={i} style={{
-              backgroundColor: tier.invite ? 'var(--panel-2)' : 'var(--panel)',
+              backgroundColor: tier.invite ? 'var(--panel-2)' : 'var(--ink)',
               borderRadius: '16px', padding: '48px 32px', position: 'relative', overflow: 'hidden',
               border: `1px solid ${tier.accentDim}`, transition: 'var(--transition-smooth)'
             }}
@@ -499,8 +539,8 @@ const Pricing = () => {
               <p style={{ color: 'var(--steel)', fontSize: '16px', marginBottom: '48px', lineHeight: 1.6 }}>{tier.desc}</p>
               
               <button style={{
-                width: '100%', padding: '16px', border: `1px solid ${tier.accent}`, borderRadius: '4px',
-                color: tier.accent, fontFamily: 'var(--font-mono)', fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.1em',
+                width: '100%', padding: '16px', border: `1px solid ${tier.accent}`, borderRadius: '4px', cursor: 'pointer',
+                color: tier.accent, fontFamily: 'var(--font-mono)', fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.1em', backgroundColor: 'transparent',
                 transition: 'var(--transition-fast)'
               }} onMouseOver={e => { e.currentTarget.style.backgroundColor = tier.accent; e.currentTarget.style.color = 'var(--ink)'; }} onMouseOut={e => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = tier.accent; }}>
                 {tier.invite ? 'Request Invite' : 'Select Tier'}
@@ -515,7 +555,7 @@ const Pricing = () => {
 
 const Events = () => {
   return (
-    <section className="reveal" style={{ padding: '120px 0', backgroundColor: 'var(--panel)' }}>
+    <section className="reveal" style={{ padding: '120px 0', backgroundColor: 'var(--ink)' }}>
       <div className="container" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '80px', alignItems: 'center' }}>
         <div>
           <div className="eyebrow" style={{ color: 'var(--sapphire)', marginBottom: '16px' }}>Tournaments & Leagues</div>
@@ -523,7 +563,7 @@ const Events = () => {
           <p style={{ fontSize: '20px', color: 'var(--steel)', marginBottom: '48px', lineHeight: 1.6 }}>
             Compete in city-wide leagues, weekend mixers, and rated tournaments. Keep your competitive spirit alive.
           </p>
-          <button style={{ borderBottom: '1px solid var(--sapphire)', color: 'var(--sapphire)', paddingBottom: '4px', fontFamily: 'var(--font-mono)', textTransform: 'uppercase', fontSize: '13px', letterSpacing: '0.1em' }}>View Calendar →</button>
+          <button style={{ borderBottom: '1px solid var(--sapphire)', color: 'var(--sapphire)', paddingBottom: '4px', fontFamily: 'var(--font-mono)', textTransform: 'uppercase', fontSize: '13px', letterSpacing: '0.1em', background: 'none', border: 'none', cursor: 'pointer' }}>View Calendar →</button>
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -534,7 +574,7 @@ const Events = () => {
           ].map((ev, i) => (
             <div key={i} style={{
               display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '32px',
-              backgroundColor: 'var(--ink)', borderRadius: '12px', border: '1px solid var(--panel-2)',
+              backgroundColor: 'var(--panel)', borderRadius: '12px', border: '1px solid var(--panel-2)',
               transition: 'var(--transition-fast)', cursor: 'pointer'
             }}
             onMouseOver={e => { e.currentTarget.style.transform = 'translateX(8px)'; e.currentTarget.style.borderColor = 'var(--sapphire-dim)'; }}
@@ -543,7 +583,7 @@ const Events = () => {
                 <div className="font-mono" style={{ fontSize: '20px', color: 'var(--sapphire)' }}>{ev.date}</div>
                 <div className="font-display" style={{ fontSize: '24px' }}>{ev.name}</div>
               </div>
-              <div className="font-mono" style={{ padding: '6px 12px', backgroundColor: 'var(--panel)', color: ev.color, fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', borderRadius: '4px' }}>
+              <div className="font-mono" style={{ padding: '6px 12px', backgroundColor: 'var(--ink)', color: ev.color, fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', borderRadius: '4px' }}>
                 {ev.sport}
               </div>
             </div>
@@ -555,7 +595,7 @@ const Events = () => {
 };
 
 const AppBanner = () => (
-  <section className="reveal" style={{ padding: '120px 0', background: 'linear-gradient(135deg, var(--panel-2), var(--ink))' }}>
+  <section className="reveal" style={{ padding: '120px 0', background: 'linear-gradient(135deg, var(--panel-2), var(--panel))' }}>
     <div className="container" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '64px', alignItems: 'center' }}>
       <div>
         <h2 className="font-display" style={{ fontSize: '64px', marginBottom: '24px' }}>BOOK FASTER<br/>ON THE APP</h2>
@@ -563,14 +603,14 @@ const AppBanner = () => (
           Get exclusive app-only drops, manage your reservations seamlessly, and track your game performance.
         </p>
         <div style={{ display: 'flex', gap: '16px' }}>
-          <div style={{ padding: '12px 24px', backgroundColor: 'var(--panel)', border: '1px solid var(--panel-2)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '12px', cursor: 'pointer' }}>
+          <div style={{ padding: '12px 24px', backgroundColor: 'var(--ink)', border: '1px solid var(--panel-2)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '12px', cursor: 'pointer' }}>
              <Smartphone size={24} color="var(--gold)" />
              <div>
                <div style={{ fontSize: '10px', color: 'var(--steel)' }}>GET IT ON</div>
                <div style={{ fontWeight: 700, fontSize: '14px' }}>Google Play</div>
              </div>
           </div>
-          <div style={{ padding: '12px 24px', backgroundColor: 'var(--panel)', border: '1px solid var(--panel-2)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '12px', cursor: 'pointer' }}>
+          <div style={{ padding: '12px 24px', backgroundColor: 'var(--ink)', border: '1px solid var(--panel-2)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '12px', cursor: 'pointer' }}>
              <Smartphone size={24} color="var(--gold)" />
              <div>
                <div style={{ fontSize: '10px', color: 'var(--steel)' }}>Download on the</div>
@@ -656,6 +696,7 @@ function App() {
       <BrowseBySport />
       <FeaturedVenues />
       <Coaching />
+      <PrivateCoaching />
       <Pricing />
       <Events />
       <AppBanner />
