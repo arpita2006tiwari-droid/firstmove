@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logoImg from '../../assets/Logo.jpeg';
+import logoImg from '../../assets/Logo.png';
 
 const Footer = () => (
   <footer className="reveal" style={{ padding: '80px 0 40px', borderTop: '1px solid var(--panel-2)', backgroundColor: 'var(--panel)' }}>

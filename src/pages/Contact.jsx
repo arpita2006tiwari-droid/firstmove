@@ -114,11 +114,11 @@ const Contact = () => {
             )}
 
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '24px' }}>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   <label className="font-mono" style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--steel)' }}>Name</label>
                   <input type="text" name="name" value={formData.name} onChange={handleChange} 
-                    style={{ backgroundColor: 'var(--panel)', border: `1px solid ${errors.name ? 'var(--ruby)' : 'var(--panel-2)'}`, padding: '16px', borderRadius: '8px', color: 'var(--chalk)', fontFamily: 'inherit', fontSize: '16px' }} 
+                    style={{ width: '100%', backgroundColor: 'var(--panel)', border: `1px solid ${errors.name ? 'var(--ruby)' : 'var(--panel-2)'}`, padding: '16px', borderRadius: '8px', color: 'var(--chalk)', fontFamily: 'inherit', fontSize: '16px' }} 
                     placeholder="Your Name" />
                   {errors.name && <span style={{ color: 'var(--ruby)', fontSize: '12px' }}>{errors.name}</span>}
                 </div>
@@ -126,7 +126,7 @@ const Contact = () => {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   <label className="font-mono" style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--steel)' }}>Phone</label>
                   <input type="tel" name="phone" value={formData.phone} onChange={handleChange} 
-                    style={{ backgroundColor: 'var(--panel)', border: `1px solid ${errors.phone ? 'var(--ruby)' : 'var(--panel-2)'}`, padding: '16px', borderRadius: '8px', color: 'var(--chalk)', fontFamily: 'inherit', fontSize: '16px' }} 
+                    style={{ width: '100%', backgroundColor: 'var(--panel)', border: `1px solid ${errors.phone ? 'var(--ruby)' : 'var(--panel-2)'}`, padding: '16px', borderRadius: '8px', color: 'var(--chalk)', fontFamily: 'inherit', fontSize: '16px' }} 
                     placeholder="10-digit Number" />
                   {errors.phone && <span style={{ color: 'var(--ruby)', fontSize: '12px' }}>{errors.phone}</span>}
                 </div>
@@ -135,7 +135,7 @@ const Contact = () => {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                 <label className="font-mono" style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--steel)' }}>Email</label>
                 <input type="email" name="email" value={formData.email} onChange={handleChange} 
-                  style={{ backgroundColor: 'var(--panel)', border: `1px solid ${errors.email ? 'var(--ruby)' : 'var(--panel-2)'}`, padding: '16px', borderRadius: '8px', color: 'var(--chalk)', fontFamily: 'inherit', fontSize: '16px' }} 
+                  style={{ width: '100%', backgroundColor: 'var(--panel)', border: `1px solid ${errors.email ? 'var(--ruby)' : 'var(--panel-2)'}`, padding: '16px', borderRadius: '8px', color: 'var(--chalk)', fontFamily: 'inherit', fontSize: '16px' }} 
                   placeholder="hello@example.com" />
                 {errors.email && <span style={{ color: 'var(--ruby)', fontSize: '12px' }}>{errors.email}</span>}
               </div>
@@ -143,7 +143,7 @@ const Contact = () => {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                 <label className="font-mono" style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--steel)' }}>Interested In</label>
                 <select name="interest" value={formData.interest} onChange={handleChange} 
-                  style={{ backgroundColor: 'var(--panel)', border: `1px solid ${errors.interest ? 'var(--ruby)' : 'var(--panel-2)'}`, padding: '16px', borderRadius: '8px', color: 'var(--chalk)', fontFamily: 'inherit', fontSize: '16px', appearance: 'none' }}>
+                  style={{ width: '100%', backgroundColor: 'var(--panel)', border: `1px solid ${errors.interest ? 'var(--ruby)' : 'var(--panel-2)'}`, padding: '16px', borderRadius: '8px', color: 'var(--chalk)', fontFamily: 'inherit', fontSize: '16px', appearance: 'none' }}>
                   <option value="" disabled>Select an option</option>
                   <option value="Private Coaching">Private Coaching</option>
                   <option value="School Programs">School Programs</option>
@@ -158,7 +158,7 @@ const Contact = () => {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                 <label className="font-mono" style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--steel)' }}>Message</label>
                 <textarea name="message" value={formData.message} onChange={handleChange} rows="4"
-                  style={{ backgroundColor: 'var(--panel)', border: `1px solid ${errors.message ? 'var(--ruby)' : 'var(--panel-2)'}`, padding: '16px', borderRadius: '8px', color: 'var(--chalk)', fontFamily: 'inherit', fontSize: '16px', resize: 'vertical' }} 
+                  style={{ width: '100%', backgroundColor: 'var(--panel)', border: `1px solid ${errors.message ? 'var(--ruby)' : 'var(--panel-2)'}`, padding: '16px', borderRadius: '8px', color: 'var(--chalk)', fontFamily: 'inherit', fontSize: '16px', resize: 'vertical' }} 
                   placeholder="How can we help you?" />
                 {errors.message && <span style={{ color: 'var(--ruby)', fontSize: '12px' }}>{errors.message}</span>}
               </div>

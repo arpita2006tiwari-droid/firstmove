@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { MapPin, ChevronDown, Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
-import logoImg from '../../assets/Logo.jpeg';
+import logoImg from '../../assets/Logo.png';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -59,7 +59,7 @@ const Navbar = () => {
               <img src={logoImg} alt="First Move Logo" style={{ height: '40px', objectFit: 'contain' }} />
             </Link>
             <div style={{ width: '1px', height: '24px', backgroundColor: 'var(--panel-2)' }} />
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', color: 'var(--ink)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', color: 'var(--chalk)' }}>
               <MapPin size={16} color="var(--gold)" />
               <span className="font-mono" style={{ fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Mumbai</span>
               <ChevronDown size={14} color="var(--steel)" />
@@ -132,13 +132,14 @@ const Navbar = () => {
               )
             ))}
             
-            <button style={{
+            <Link to="/contact" style={{
+              display: 'inline-block', textDecoration: 'none', textAlign: 'center',
               backgroundColor: 'var(--gold)', color: 'var(--chalk)', padding: '12px 24px', border: 'none', cursor: 'pointer', borderRadius: '4px',
               fontFamily: 'var(--font-mono)', fontSize: '13px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em',
               transition: 'var(--transition-fast)'
             }} onMouseOver={e => e.target.style.backgroundColor = '#f0c662'} onMouseOut={e => e.target.style.backgroundColor = 'var(--gold)'}>
               Get Started
-            </button>
+            </Link>
           </div>
 
           {/* Mobile Toggle */}
@@ -194,13 +195,14 @@ const Navbar = () => {
               )}
             </div>
           ))}
-          <button style={{
+          <Link to="/contact" style={{
+            display: 'block', textAlign: 'center', textDecoration: 'none',
             backgroundColor: 'var(--gold)', color: 'var(--chalk)', padding: '16px', border: 'none', cursor: 'pointer', borderRadius: '4px',
             fontFamily: 'var(--font-mono)', fontSize: '16px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em',
             marginTop: '24px'
-          }}>
+          }} onClick={() => setMobileMenuOpen(false)}>
             Get Started
-          </button>
+          </Link>
         </div>
       </div>
     </>
